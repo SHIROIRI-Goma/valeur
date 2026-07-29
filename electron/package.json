@@ -1,0 +1,40 @@
+{
+  "name": "valeur",
+  "version": "1.0.0",
+  "description": "Equal Value Color Picker for illustrators",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.shiroirigoma.valeur",
+    "productName": "Valeur",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "../index.html"
+    ],
+    "extraFiles": [
+      {
+        "from": "../index.html",
+        "to": "index.html"
+      }
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}
